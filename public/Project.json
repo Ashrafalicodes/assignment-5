@@ -109,16 +109,7 @@
     "difficulty": "Beginner-Friendly",
     "badge": "Essential"
   },
-  {
-    "id": "github",
-    "name": "GitHub",
-    "category": "Tools",
-    "description": "A platform for hosting code, managing projects, and collaborating on software development.",
-    "icon": "https://icon.icepanel.io/Technology/svg/Github.svg",
-    "rating": 4.8,
-    "difficulty": "Beginner-Friendly",
-    "badge": "Essential"
-  },
+ 
   {
     "id": "vue",
     "name": "Vue.js",

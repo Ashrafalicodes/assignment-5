@@ -6,7 +6,7 @@ const Banner = () => {
     <div className="container mx-auto px-6 py-12 flex flex-col-reverse md:flex-row items-center justify-between gap-8">
       <div className="max-w-xl space-y-6">
         <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900 leading-tight">
-          Build Your Ideal <br />
+          Build Your Ideal <br/><span className="text-5xl font-extrabold bg-linear-to-r from-orange-500 via-pink-500 to-purple-600 bg-clip-text text-transparent">Development Stack</span>
           <span className="bg-liner-to-r from-[#FF5E36] via-[#E91E63] to-[#9C27B0] bg-clip-text text-transparent"></span>
         </h1>
 
