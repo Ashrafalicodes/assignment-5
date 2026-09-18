@@ -6,17 +6,21 @@ import AllProject from "./AllProject";
 
 export interface ProjectProps {
   PromiseProject: Promise<Ijob[]>;
+  handleClick:(tech:Ijob)=> void
 }
 
-export default function Project({ PromiseProject }: ProjectProps) {
+export default function Project({ PromiseProject, handleClick }: ProjectProps) {
   const projects = use(PromiseProject);
 
   return (
     <>
       
       <div className="col-span-3 grid grid-cols-3 gap-5">
-        {projects.map((singlebook, index) => (
-          <AllProject key={index} singlebook={singlebook}></AllProject>
+        {projects.map((singlebook) => (
+          <AllProject 
+          key={singlebook.id} 
+          singlebook={singlebook}
+          handleClick={handleClick}></AllProject>
         ))}
       </div>
     </>

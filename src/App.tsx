@@ -1,8 +1,9 @@
-import { Suspense } from "react";
+import { Suspense, useState } from "react";
 import Banner from "./component/Banner";
 import Nav from "./component/Nav";
 import Project from "./component/Project";
 import Addproject from "./component/Addproject";
+import type { Ijob } from "./component/types/Type";
 
 
 const FetchProject = async () => {
@@ -14,6 +15,13 @@ const FetchProject = async () => {
 const PromiseProject = FetchProject();
 
 function App() {
+
+  const [saved,setSaved]= useState<Ijob[]>([])
+  const handleClick=(tech:Ijob)=>{
+    setSaved([...saved, tech]);
+   
+  }
+
   return (
     <>
       <Nav />
@@ -31,36 +39,21 @@ function App() {
       </div>
           <div className="grid grid-cols-4 gap-4">
             <Suspense fallback =  {<div>Loading...</div>}>
-            <Project PromiseProject={PromiseProject} ></Project>
+            <Project PromiseProject={PromiseProject}
+            handleClick={handleClick}
+            ></Project>
             </Suspense>
-            <Addproject></Addproject>
+            <Addproject saved={saved}
+           
+            
+            ></Addproject>
           </div>
         </section>
       </main>
 
 
 
-      {/* <main>
-        <section className="container mx-auto my-10 px-4">
 
-          <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-            
-            <div className="lg:col-span-3">
-              <Suspense fallback={<div className="text-center py-10 font-bold">Loading...</div>}>
-                <Project PromiseProject={PromiseProject} />
-              </Suspense>
-            </div>
-            <div className="lg:col-span-1">
-              <div className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm sticky top-5">
-                <h2 className="text-xl font-bold text-slate-900 mb-4">Your Stack</h2>
-                <p className="text-sm text-slate-400 mb-4">
-                </p>
-              </div>
-            </div>
-
-          </div>
-        </section>
-      </main> */}
 
     </>
   );

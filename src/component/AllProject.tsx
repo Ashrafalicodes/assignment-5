@@ -3,9 +3,10 @@ import type { Ijob } from "./types/Type"
 
 export interface AllProjectProps {
     singlebook: Ijob
+    handleClick:(tech:Ijob)=> void
 }
 
-export default function AllProject({ singlebook }: AllProjectProps) {
+export default function AllProject({ singlebook,handleClick }: AllProjectProps) {
     return (
         <div className=" bg-white shadow-sm border border-gray-200 rounded-xl p-6 relative">
             
@@ -47,7 +48,8 @@ export default function AllProject({ singlebook }: AllProjectProps) {
             </div>
 
             {/* Button */}
-            <button className="w-full bg-black text-white font-medium py-3 rounded-lg hover:bg-gray-800 transition">
+ 
+            <button className="w-full bg-black text-white font-medium py-3 rounded-lg hover:bg-gray-800 transition" onClick={() => handleClick(singlebook)}>
                 Add to Stack
             </button>
         </div>
