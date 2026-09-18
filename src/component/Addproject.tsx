@@ -45,7 +45,7 @@ export default function Addproject({ saved, handleClearAll, onRemove }: Addproje
                 <button
                   type="button"
                   className="ml-auto text-nav-icon hover:text-coral"
-                  // onClick={() => onRemove(item.id)}
+                  onClick={() => onRemove(item.id)}
                   aria-label={`Remove ${item.name}`}
                 >
                   <FiX/>

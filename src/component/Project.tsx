@@ -7,9 +7,10 @@ import AllProject from "./AllProject";
 export interface ProjectProps {
   PromiseProject: Promise<Ijob[]>;
   handleClick:(tech:Ijob)=> void
+  saved : Ijob[]
 }
 
-export default function Project({ PromiseProject, handleClick }: ProjectProps) {
+export default function Project({ PromiseProject, handleClick, saved }: ProjectProps) {
   const projects = use(PromiseProject);
 
   return (
@@ -18,6 +19,7 @@ export default function Project({ PromiseProject, handleClick }: ProjectProps) {
       <div className="col-span-3 grid grid-cols-3 gap-5">
         {projects.map((singlebook) => (
           <AllProject 
+          saved={saved}
           key={singlebook.id} 
           singlebook={singlebook}
           handleClick={handleClick}></AllProject>

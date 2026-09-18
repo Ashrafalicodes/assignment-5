@@ -4,9 +4,14 @@ import type { Ijob } from "./types/Type"
 export interface AllProjectProps {
     singlebook: Ijob
     handleClick:(tech:Ijob)=> void
+    saved : Ijob[]
+    
 }
 
-export default function AllProject({ singlebook,handleClick }: AllProjectProps) {
+export default function AllProject({ singlebook,handleClick,saved }: AllProjectProps) {
+    const selected = saved.some((item)=> item.id===singlebook.id)
+    console.log(selected);
+    
     return (
         <div className=" bg-white shadow-sm border border-gray-200 rounded-xl p-6 relative">
             
@@ -49,7 +54,9 @@ export default function AllProject({ singlebook,handleClick }: AllProjectProps) 
 
             {/* Button */}
  
-            <button className="w-full bg-black text-white font-medium py-3 rounded-lg hover:bg-gray-800 transition" onClick={() => handleClick(singlebook)}>
+            <button className="w-full bg-black text-white font-medium py-3 rounded-lg hover:bg-gray-800 transition" 
+            disabled={selected}
+            onClick={() => handleClick(singlebook)}>
                 Add to Stack
             </button>
         </div>
