@@ -51,7 +51,11 @@ export default function AllProject({
       {/* Button */}
 
       <button
-        className="w-full bg-black text-white font-medium py-3 rounded-lg hover:bg-gray-800 transition "
+        className={`w-full font-medium py-3 rounded-lg transition ${
+    selected
+      ? "bg-green-500 text-white cursor-not-allowed"
+      : "bg-black text-white hover:bg-gray-800"
+  }`}
         disabled={selected}
         onClick={() => handleClick(singlebook)}
       >

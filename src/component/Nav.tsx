@@ -7,9 +7,9 @@ export interface NavProps {
 export default function Nav() {
   return (
     <>
-    <div className='bg-[#FFFFFF] border-b border-gray-200'>
+    <div className='bg-[#FFFFFF] border-b border-gray-200 sticky top-0 z-50  shadow-sm'>
 
-      <div className="flex justify-between items-center gap-4 container mx-auto m-2 p-2">
+      <div className="flex justify-between items-center gap-4 container mx-auto m-2 p-2 ">
         <img src={logo} alt="Logo" />
         <ul className="flex gap-6">
           <li>Home</li>
