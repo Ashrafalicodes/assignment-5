@@ -5,6 +5,7 @@ import Project from "./component/Project";
 import Addproject from "./component/Addproject";
 import type { Ijob } from "./component/types/Type";
 import { toast } from "react-toastify";
+import Fotter from "./component/Fotter";
 
 
 const FetchProject = async () => {
@@ -71,6 +72,7 @@ function App() {
           </div>
         </section>
       </main>
+      <Fotter/>
 
 
 

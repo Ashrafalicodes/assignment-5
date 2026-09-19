@@ -51,11 +51,11 @@ export default function AllProject({
       {/* Button */}
 
       <button
-        className="w-full bg-black text-white font-medium py-3 rounded-lg hover:bg-gray-800 transition"
+        className="w-full bg-black text-white font-medium py-3 rounded-lg hover:bg-gray-800 transition "
         disabled={selected}
         onClick={() => handleClick(singlebook)}
       >
-        {selected ? "Added ✓" : "Add to Stack"}
+        {selected ? "Added" : "Add to Stack"}
       </button>
     </div>
   );
